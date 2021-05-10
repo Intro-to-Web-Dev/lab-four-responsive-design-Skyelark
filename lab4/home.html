@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!--Zac McCloud 5/5/21-->
-<html>
+<!--Zac McCloud 5/5/21 - one area that the site responsiveness could be improved is by making the background image stop repeating at smaller screen sizes.-->
+<html lang="en">
     <head>
         <title>MPLS Dogboarding </title>
         <meta charset="UTF-8">
@@ -84,6 +84,37 @@
                 border-radius: 10px;
                 background-color: #000000dc;
             }
+            /* smaller than 1024 pixels */
+            @media screen and (max-width: 1024px) {
+                aside {
+                    height: auto;
+                }
+                #flexcontainer {
+                    background-size: auto;
+                }
+            }
+            /* smaller than 768 pixels */
+            @media screen and (max-width: 768px) {
+                #flexcontainer {
+                    background-image: url(img/dog_bg_768.jpg);
+                }
+                aside {
+                    background-color: #000000cf;
+                    background-position: center;
+                    background-size: cover;
+                    color: white;
+                }
+                #location_button {
+                    display: block;
+                }
+            }
+            /**Hover**/
+            aside:hover {
+                background-color: #ff4500bd;
+                height: 325px;
+                color: white;
+                transition: all .2s ease-in-out;
+            }
         </style>
     </head>
     <body>
@@ -100,11 +131,9 @@
                 <aside>
                     <h2>Price</h2>
                     <h3>Weekly Boarding</h3>
-                    <p>$425 - 7 days [24 hours from drop-off time] </li>
+                    <p>$425 - 7 days [24 hours from drop-off time] </p>
                     <h3>Daily Rate: </h3>
                     <p>$75 - 1 day [24 hours from drop-off time</p>
-                    
-                    </ul>
                 </aside>
                 <aside>
                     <h2>Hours of Operation</h2>
@@ -117,7 +146,7 @@
                     </ul>
                     <h3>Weekend Hours</h3>
                     <ul>
-                        <li>Saturday and Sunday: 1pm - 9pm
+                        <li>Saturday and Sunday: 1pm - 9pm </li>
                     </ul>
                 </aside>
                 <button id="location_button">Click Here For Location</button>
